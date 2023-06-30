@@ -1,13 +1,19 @@
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+
 }
 
 :root {
     --primary-color: #171100;
+    --ccc: #ccc
+}
+
+img, .btn {
+    user-select: none;
 }
 
 body {
-    scroll-behavior: smooth;
     box-sizing: border-box;
     font-size: 1.6rem;
     font-family: 'Lato', sans-serif;
@@ -33,6 +39,8 @@ a {
 
 .container {
     background-color: #abc;
+    height: 84px;
+    opacity: 0.75;
     position: sticky;
     top: -36px;
     z-index: 1;
@@ -53,15 +61,16 @@ a {
 
 .navbar .nav a {
     font-weight: 400;
-    font-size: 1.6;
+    font-size: 1.6rem;
     line-height: 1.75;
     color: #5F5B53;
 }
 
 .navbar-btn {
+    margin-top: 3px;
     border-radius: 24.5px;
     margin-left: auto;
-    padding: 11px 41px;
+    padding: 6px 30px;
     background-color: var(--primary-color);
     font-weight: 600;
     font-size: 1.6rem;
@@ -186,9 +195,8 @@ a {
     gap: 18px;
 }
 
-
 svg {
-    width: 30px;
+    width: 27px;
     height: 35px;
 }
 
@@ -403,6 +411,7 @@ svg {
 
 /* Quote-box */
 .quote-box {
+    position: relative;
     background-color: #2E2100;
     padding: 96px 135px;
 }
@@ -455,8 +464,8 @@ svg {
     font-size: 2.6rem;
     line-height: 1.54;
     color: #FFFFFF;
-    bottom: 0;
-    right: 0;
+    top: 26px;
+    left: 30px;
 }
 
 .quote-box .quote .icon {
@@ -469,6 +478,10 @@ svg {
 .feature-box {
     background-color: #E5E5E5;
     padding: 200px 0;
+}
+
+.feature-box img {
+    object-fit: cover;
 }
 
 .feature-box .feature-1 {
@@ -733,6 +746,7 @@ svg {
     color: #FFFFFF;
 }
 
+
 /* Copyright */
 .copyright p {
     margin-top: 28px;
@@ -747,4 +761,345 @@ svg {
 .navbar .nav a:hover {
     color: var(--primary-color);
     text-decoration: underline;
+}
+
+/* form */
+.sign-up-block--on {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    gap: 50px;
+    background-color: #f6fae8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    border-radius: 10px;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.sign-up-block--off {
+    display: none;
+}
+
+.close-form {
+    align-self: flex-end;
+    width: 17px;
+    height: 17px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.loign-here {
+    align-self: flex-end;
+    margin: 0 5px 5px 0;
+}
+
+.loign-here a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+.sign-up-text {
+    margin-top: 20px;
+    font-size: 4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: chocolate;
+}
+
+input {
+    height: 25px;
+    background-color: transparent;
+    width: 240px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    width: 360px;
+}
+
+.form-submit {
+    width: 250px;
+    height: 34px;
+    background-color: rgb(126, 190, 30);
+    border: 1px solid green;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.blur--on {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.35;
+    z-index: 3;
+}
+
+.form-block {
+    margin-left: 115px;
+    margin-top: -25px;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.error {
+    border-color: red;
+    background-color: rgb(255, 242, 242);
+}
+
+.success {
+    border-color: green;
+    background-color: rgb(237, 255, 237);
+}
+
+.sign-up__form--message {
+    position: absolute;
+    top: 10px;
+    left: -200px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 1.4rem;
+    opacity: 0;
+    border: 0.5px solid greenyellow;
+    transition: all 0.7s linear;
+}
+
+.message-icon {
+    border-radius: 50%;
+    color: #ffffff;
+    margin: 0 8px;
+}
+
+.message-content {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+/* Bonus */
+.quote-block {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.quote-box {
+    width: 100%;
+}
+
+.arrow {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    clip-path: polygon(100% 0%, 70% 50%, 100% 100%, 85% 100%, 40% 50%, 85% 0%);
+    position: absolute;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.arrow-left {
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+}
+
+.arrow-right {
+    right: 3%;
+    top: 45%;
+    transform: rotate(180deg);
+}
+
+/* Course */
+.free-course-title,
+.pro-course-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.list-course {
+    margin: 30px 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.course-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 270px;
+    height: 160px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.course-name {
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: #fff;
+    user-select: none;
+}
+
+.course-name-desc {
+    font-size: 1.8rem;
+    color: greenyellow;
+    user-select: none;
+}
+
+.course-desc {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.member-quantity {
+    font-size: 1.4rem;
+}
+
+.responsive-course {
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.basic-javascript-course {
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+}
+
+.advanced-javascript-course {
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 78%, rgba(252,176,69,1) 100%);
+}
+
+.node-course {
+    background: radial-gradient(circle, rgba(124,208,132,1) 0%, rgba(122,198,58,1) 19%, rgba(81,169,59,1) 100%);
+}
+
+.responsive-course {
+    background: linear-gradient(90deg, rgba(82,54,255,1) 0%, rgba(217,237,255,1) 100%);
+}
+
+.reactjs-course {
+    background: linear-gradient(90deg, rgba(6,190,182,1) 0%, rgba(72,177,191,1) 100%);
+}
+
+.ubuntu-course {
+    background: linear-gradient(90deg, rgba(0,175,185,1) 0%, rgba(254,217,183,1) 84%);
+}
+
+.html-course {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 60%);
+}
+
+.responsive-pro-course {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+}
+
+.reactjs-pro-course {
+    background: linear-gradient(to right, #00b09b, #96c93d);
+    filter: grayscale();
+    pointer-events: none;
+}
+
+.html-pro-course {
+    background: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+}
+
+.vuejs-pro-course {
+    background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+}
+
+.above-btn {
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    outline: 1px solid #ddd;
+    border-radius: 99px;
+    z-index: 1;
+    transition: 0.2s all linear;
+    opacity: 0;
+    color: #000;
+}
+
+.above-btn:hover {
+    opacity: 1 !important;
+}
+
+.above-btn:hover {
+    background-color: #fff;
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: all 0.2s linear;
+    opacity: 0;
+}
+
+.pro {
+    color: yellow   ;
+}
+
+.courses-price {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.old-course-price {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 1.4rem;
+}
+
+.new-course-price {
+    color: red;
+}
+
+.premium-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: yellow;
 }
